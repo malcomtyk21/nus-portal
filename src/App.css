@@ -164,3 +164,28 @@ li::before {
     padding-right: 1rem;
   }
 }
+
+.user-email {
+  color: white;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.login input,
+.login button {
+  padding: 8px;
+}
+
+.notification {
+  background-color: #ffe0e0;
+  border: 1px solid #cc0000;
+  color: #cc0000;
+  padding: 10px;
+}
