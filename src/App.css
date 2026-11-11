@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+:root {
+  --nus-blue: #003d7c;
+  --nus-orange: #ef7c00;
+  --ink: #1a2a40;
+  --ink-muted: #5a6b84;
+  --line: #e6eaf0;
+  --surface: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--surface);
+  color: var(--ink);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* ---------- Navbar ---------- */
+
+.navbar {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--nus-blue);
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid var(--nus-orange);
+  outline-offset: 4px;
+}
+
+/* ---------- Page ---------- */
+
+.content {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  text-align: left;
+}
+
+h2 {
+  margin: 0 0 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--nus-blue);
+}
+
+/* ---------- Home ---------- */
+
+.logo {
+  display: block;
+  width: 14rem;
+  max-width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.content p {
+  margin: 0;
+  max-width: 32rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--nus-blue);
+}
+
+/* ---------- Academics ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  text-align: left;
+}
+
+th {
+  color: var(--ink-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+td {
+  font-size: 1rem;
+}
+
+td:first-child,
+th:first-child {
+  width: 7rem;
+  padding-right: 1.5rem;
+}
+
+tbody td:first-child {
+  font-weight: 600;
+  color: var(--nus-orange);
+}
+
+/* ---------- Admission ---------- */
+
+ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+li {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 1rem;
+  counter-increment: step;
+}
+
+li::before {
+  content: counter(step);
+  width: 1.5rem;
+  flex: none;
+  font-weight: 600;
+  color: var(--nus-orange);
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .content {
+    padding: 2.5rem 1rem 4rem;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+  }
+
+  .content p {
+    font-size: 1.375rem;
+  }
+
+  td:first-child,
+  th:first-child {
+    width: auto;
+    padding-right: 1rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.user-email {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login input,
+.login button {
+  padding: 8px;
+}
+
+.notification {
+  background-color: #ffe0e0;
+  border: 1px solid #cc0000;
+  color: #cc0000;
+  padding: 10px;
 }
